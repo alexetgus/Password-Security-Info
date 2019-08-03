@@ -1,8 +1,5 @@
 # passwordsecurity.info
-**PasswordSecurity.info** is a website that helps you create and find good passwords, and suggests modifications you could apply to make them stronger. The site uses the "How Secure Is My Password" open source script and the "Have I Been Pwned" API to check if your password has ever been breached and how long it would take to break it.
-
-
-> This website was originally created to participate in a laptop contest organized by Troy Hunt (@troyhunt).
+**PasswordSecurity.info** est une page web qui vous aide à créer et à trouver de bons mots de passe et suggère des modifications que vous pourriez apporter pour les renforcer. La page utilise le script open source "How Secure Is My Password" et l'API "Have I Been Pwned" pour vérifier si votre mot de passe a déjà été divulgué et combien de temps cela prendrait pour le briser.
 
 
 **passwordsecurity.info**: https://passwordsecurity.info

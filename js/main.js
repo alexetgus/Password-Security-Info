@@ -41,8 +41,8 @@
 
     // setup custom values for "instantly"/"forever"
     hsimp.setDictionary({
-        "instantly": "Immediately",
-        "forever": "Aaaaaaaaaaaaaaaages",
+        "instantly": "Immediatement",
+        "forever": "Toujours",
     });
 
     // Run the HSIMP
@@ -53,7 +53,7 @@
 
 var requestTimeout;
 function passwordKeyPress(){
-    document.getElementById("iscompromised").innerHTML = '<span style="color: #ff9900;"><img src="img/loading.gif" alt="" width="25" height="25" />&nbsp;We are checking if your password has ever been compromised...</span>';
+    document.getElementById("iscompromised").innerHTML = '<span style="color: #ff9900;"><img src="img/loading.gif" alt="" width="25" height="25" />&nbsp;Nous vérifions si votre mot de passe a déjà été compromis...</span>';
     
     clearTimeout(requestTimeout);
     requestTimeout = setTimeout(passwordmodified, 2000);
@@ -85,17 +85,17 @@ function passwordmodified() {
 
             var passlist = xhttpresponse.split("\n");
             var pwnedcount = 0;
-            var timespell = 'times';
+            var timespell = 'fois';
             for (var i = 0; i < passlist.length; i++) {
               if (subsha1pass == passlist[i].split(":")[0]) {
                 pwnedcount = passlist[i].split(":")[1];
-                if (passlist[i].split(":")[1] == 1){ timespell = "time"; }
+                if (passlist[i].split(":")[1] == 1){ timespell = "fois"; }
               }
             }
 
-            document.getElementById("iscompromised").innerHTML = '<span style="color: #ff0000;">Oh no! This password was found <b>'+ pwnedcount + '</b> '+ timespell + ' in compromised passwords databases! If this is your password, you should change it immediately. Using a password that has been breached is extremely dangerous. <h4>If you are using this password on multiple websites, you should take the opportunity to start using different passwords for every website. Attackers can take the advantage of password reuse by automating login attempts on your account using breached emails and password pairs.</h4></span>';
+            document.getElementById("iscompromised").innerHTML = '<span style="color: #ff0000;">Oh non ! Ce mot de passe a été trouvé <b>'+ pwnedcount + '</b> '+ timespell + ' dans les bases de données de mots de passe compromis ! Si c\'est votre mot de passe, vous devez le changer immédiatement. L\'utilisation d\'un mot de passe qui a été divulgué est extrêmement dangereuse. <h4>Si vous utilisez ce mot de passe sur plusieurs sites Web, vous devriez en profiter pour commencer à utiliser des mots de passe différents pour chaque site. Les attaquants peuvent tirer profit de la réutilisation des mots de passe en automatisant les tentatives de connexion sur votre compte à l\'aide de paires de courriels et de mots de passe piratés.</h4></span>';
           }else {
-            document.getElementById("iscompromised").innerHTML = '<span style="color: #339966;">Good news, this password has never been breached!</span>';
+            document.getElementById("iscompromised").innerHTML = '<span style="color: #339966;">Bonne nouvelle, ce mot de passe n\'a jamais été divulgué !</span>';
           }
         }
       };
