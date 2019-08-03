@@ -41,8 +41,8 @@
 
     // setup custom values for "instantly"/"forever"
     hsimp.setDictionary({
-        "instantly": "Immediatement",
-        "forever": "Toujours",
+        "instantly": "un claquement de doigt",
+        "forever": "l'éternité",
     });
 
     // Run the HSIMP
